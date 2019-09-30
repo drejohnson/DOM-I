@@ -130,3 +130,37 @@ address.innerHTML = addressBR.join("Street </BR>");
 // Footer
 let footerText = document.querySelector('footer p');
 footerText.textContent = siteContent["footer"]["copyright"];
+
+// Stretch
+const body = document.querySelector('body')
+body.style.backgroundColor = '#eee'
+const h1Style = document.querySelectorAll('h1')
+h1Style.forEach(heading => {
+  heading.style.color = 'indianred'
+})
+
+const h4Style = document.querySelectorAll('h4')
+h4Style.forEach(heading => {
+  heading.style.fontSize = '2.5rem'
+  heading.style.color = 'teal'
+})
+
+ctaBTN.addEventListener('click', event => {
+  ctaH1.textContent = 'Hello from Lambda School'
+  const hello = ctaH1.textContent.split(" ");
+  ctaH1.innerHTML = hello.join("</BR>");
+
+  setTimeout(() => {
+    ctaH1.textContent = siteContent["cta"]["h1"]
+    const h1 = ctaH1.textContent.split(" ");
+    ctaH1.innerHTML = h1.join("</BR>");
+  }, 2000);
+})
+
+ctaBTN.addEventListener("mouseenter", event => {   
+  event.target.style.color = "indianred";
+
+  setTimeout(function() {
+    event.target.style.color = '';
+  }, 500);
+});
