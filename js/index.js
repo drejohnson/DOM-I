@@ -43,14 +43,27 @@ logo.setAttribute("src", siteContent["nav"]["img-src"]);
 logo.setAttribute("alt", "Great Idea! Company logo");
 
 // Nav
+const nav = document.querySelector('nav')
 const navLinks = document.querySelectorAll('nav a')
+const homeLink = document.createElement('a')
+const blogLink = document.createElement('a')
+homeLink.href = '#'
+homeLink.textContent = 'Home'
+homeLink.style.color = 'green'
+blogLink.href = '#'
+blogLink.textContent = 'Blog'
+blogLink.style.color = 'green'
 const linkText = Object.values(siteContent["nav"]).map(element => element)
 const linkClass = Object.keys(siteContent["nav"]).map(element => element)
 
 Array.from(navLinks).map((link, i) => {
   link.classList.add(linkClass[i])
   link.textContent = linkText[i]
+  link.style.color = 'green'
 })
+
+nav.prepend(homeLink)
+nav.appendChild(blogLink)
 
 // CTA
 const ctaH1 = document.querySelector('.cta-text h1')
